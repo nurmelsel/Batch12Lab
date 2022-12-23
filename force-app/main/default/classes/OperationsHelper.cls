@@ -1,45 +1,32 @@
 public  class OperationsHelper {
-    public decimal largestOutOfTwoNumbers(decimal a, decimal b){
-        if(a > b){
-            //returning a only if it is greater than b
-            return a;
-        }
-        return b;//returning the decimal data type value
-    }
-
-    // public decimal largestOutOfTwoNumbers2(decimal a, decimal b){
-    //     return math.max(a, b);
-    // }
-    
-    public decimal smallestOutOfTwoNumbers(decimal a, decimal b, decimal c){
-        if(a <=b && a <=c){
-            return a;
-        }
-        else if(b <=a && b< =c){
-            return b;
-        }
-        return c;
-    }
-
-    // public decimal smallestOutOfTwoNumbers2(decimal a, decimal b, decimal c){
-    //     decimal x = Math.min(a,b);
-    //     return Math.min(x, c);
-    // }
-
-    public Integer sumofPositiveIntegers(Integer n){
-        Integer sum;
-        if(n<0){
-            //checking if the n is negative then showing the debig message
-            //sum = null;
-            system.debug('We are not calculating the sum for negative numbers');
+    public decimal largestOutOfTwoNumbers(Decimal d1, Decimal d2) {
+        decimal returnMax;
+        if(d1 >= d2){
+            returnMax = d1;
         } else {
-            //does calculation only when i is +ve.
+            returnMax = d2;
+        }
+        return returnMax;
+    }
+
+    public decimal smallestOutOfThreeNumbers(Decimal d1, Decimal d2, Decimal d3){
+        //FIRST WAY
+        Decimal d1d2Min = math.min(d1, d2);
+        Decimal d1d2d3Min = math.min(d1d2Min, d3);
+        return d1d2d3Min;
+    }
+
+    public integer sumOfPositiveInteger(integer n){
+        integer sum;
+        if(n < 0){
+            system.debug('We are NOT calculating the sum of negative number. So, be positive, pass positive number.');
+        } else {
             sum = 0;
-            for(Integer i = 1; i <= n; i++){
-                sum = sum + i;
-                //sum += i;
+            for (Integer i = 0; i <= n; i++) {
+                sum += i;
             }
         }
+        
         return sum;
     }
 }
